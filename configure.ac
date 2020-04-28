@@ -76,14 +76,14 @@ AC_ARG_WITH([network],
     [Specify network. Default is testnet.]
   )],
   [hsk_network=$withval],
-  [hsk_network=testnet])
+  [hsk_network=main])
 
 case $hsk_network in
-  main)
+  main | yes)
     AC_DEFINE(HSK_NETWORK, HSK_MAIN,
       [Define this symbol to choose a network])
   ;;
-  testnet | yes)
+  testnet)
     AC_DEFINE(HSK_NETWORK, HSK_TESTNET,
       [Define this symbol to choose a network])
   ;;
