@@ -110,7 +110,7 @@ hsk_ns_record_read(
   const hsk_dns_dmp_t *dmp,
   hsk_ns_record_t *rec
 ) {
-  return hsk_dns_name_read(data, data_len, dmp, &rec->name);
+  return hsk_dns_name_read(data, data_len, dmp, rec->name);
 }
 
 bool
@@ -120,7 +120,7 @@ hsk_glue4_record_read(
   const hsk_dns_dmp_t *dmp,
   hsk_glue4_record_t *rec
 ) {
-  if (!hsk_dns_name_read(data, data_len, dmp, &rec->name))
+  if (!hsk_dns_name_read(data, data_len, dmp, rec->name))
     return false;
 
   return read_bytes(data, data_len, rec->inet4, 4);
@@ -133,7 +133,7 @@ hsk_glue6_record_read(
   const hsk_dns_dmp_t *dmp,
   hsk_glue6_record_t *rec
 ) {
-  if (!hsk_dns_name_read(data, data_len, dmp, &rec->name))
+  if (!hsk_dns_name_read(data, data_len, dmp, rec->name))
     return false;
 
   return read_bytes(data, data_len, rec->inet6, 16);

@@ -39,22 +39,22 @@ typedef struct hsk_target_s {
   uint8_t onion[33];
 } hsk_target_t;
 
-typedef hsk_ns_record_s {
+typedef struct hsk_ns_record_s {
   uint8_t type;
-  char name[256];  
+  char name[256];
 } hsk_ns_record_t;
 
-typedef hsk_glue4_record_s {
+typedef struct hsk_glue4_record_s {
   uint8_t type;
-  char name[256];  
+  char name[256];
   uint8_t inet4[4];
-} hsk_glue4_record_s;
+} hsk_glue4_record_t;
 
-typedef hsk_glue6_record_s {
+typedef struct hsk_glue6_record_s {
   uint8_t type;
-  char name[256];  
+  char name[256];
   uint8_t inet6[16];
-} hsk_glue6_record_s;
+} hsk_glue6_record_t;
 
 typedef struct hsk_txt_record_s {
   uint8_t type;
