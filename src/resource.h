@@ -112,4 +112,24 @@ hsk_resource_to_notimp(void);
 
 bool
 hsk_resource_is_ptr(const char *name);
+
+static bool
+hsk_resource_to_empty(
+  const char *name,
+  const uint8_t *type_map,
+  size_t type_map_len,
+  hsk_dns_rrs_t *an
+);
+
+static bool
+hsk_resource_root_to_soa(hsk_dns_rrs_t *an);
+
+static void
+ip_to_b32(const hsk_target_t *target, char *dst);
+
+static bool
+b32_to_ip(const char *str, uint8_t *ip, uint16_t *family);
+
+static bool
+pointer_to_ip(const char *name, uint8_t *ip, uint16_t *family);
 #endif
