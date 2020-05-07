@@ -95,6 +95,9 @@ hsk_resource_get(const hsk_resource_t *res, uint8_t type);
 bool
 hsk_resource_has(const hsk_resource_t *res, uint8_t type);
 
+bool
+hsk_resource_has_ns(const hsk_resource_t *res);
+
 hsk_dns_msg_t *
 hsk_resource_to_dns(const hsk_resource_t *rs, const char *name, uint16_t type);
 
@@ -125,7 +128,7 @@ static bool
 hsk_resource_root_to_soa(hsk_dns_rrs_t *an);
 
 static void
-ip_to_b32(const hsk_target_t *target, char *dst);
+ip_to_b32(const uint8_t *ip, char *dst);
 
 static bool
 b32_to_ip(const char *str, uint8_t *ip, uint16_t *family);
