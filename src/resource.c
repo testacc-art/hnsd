@@ -360,42 +360,40 @@ hsk_record_read(
   if (r == NULL)
     return false;
 
-  bool result = true;
-
   switch (type) {
     case HSK_DS: {
       hsk_ds_record_t *rec = (hsk_ds_record_t *)r;
-      result = hsk_ds_record_read(data, data_len, rec);
+      hsk_ds_record_read(data, data_len, rec);
       break;
     }
     case HSK_NS: {
       hsk_ns_record_t *rec = (hsk_ns_record_t *)r;
-      result = hsk_ns_record_read(data, data_len, dmp, rec);
+      hsk_ns_record_read(data, data_len, dmp, rec);
       break;
     }
     case HSK_GLUE4: {
       hsk_glue4_record_t *rec = (hsk_glue4_record_t *)r;
-      result = hsk_glue4_record_read(data, data_len, dmp, rec);
+      hsk_glue4_record_read(data, data_len, dmp, rec);
       break;
     }
     case HSK_GLUE6: {
       hsk_glue6_record_t *rec = (hsk_glue6_record_t *)r;
-      result = hsk_glue6_record_read(data, data_len, dmp, rec);
+      hsk_glue6_record_read(data, data_len, dmp, rec);
       break;
     }
     case HSK_SYNTH4: {
       hsk_synth4_record_t *rec = (hsk_synth4_record_t *)r;
-      result = hsk_synth4_record_read(data, data_len, rec);
+      hsk_synth4_record_read(data, data_len, rec);
       break;
     }
     case HSK_SYNTH6: {
       hsk_synth6_record_t *rec = (hsk_synth6_record_t *)r;
-      result = hsk_synth6_record_read(data, data_len, rec);
+      hsk_synth6_record_read(data, data_len, rec);
       break;
     }
     case HSK_TEXT: {
       hsk_txt_record_t *rec = (hsk_txt_record_t *)r;
-      result = hsk_txt_record_read(data, data_len, rec);
+      hsk_txt_record_read(data, data_len, rec);
       break;
     }
     default: {
