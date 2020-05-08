@@ -976,7 +976,7 @@ hsk_resource_to_dns(const hsk_resource_t *rs, const char *name, uint16_t type) {
     case HSK_DNS_NS:
       // Includes SYNTH and GLUE records.
       hsk_resource_to_ns(rs, name, ns);
-      hsk_resource_to_glue(rs, ar, HSK_DNS_NS);
+      hsk_resource_to_glue(rs, name, ar);
       hsk_dnssec_sign_zsk(ns, HSK_DNS_NS);
       break;
     case HSK_DNS_TXT:
