@@ -723,7 +723,7 @@ hsk_resource_to_glue(
   return true;
 }
 
-static bool
+bool
 hsk_resource_root_to_soa(hsk_dns_rrs_t *an) {
   hsk_dns_rr_t *rr = hsk_dns_rr_create(HSK_DNS_SOA);
 
@@ -863,7 +863,7 @@ hsk_resource_root_to_ds(hsk_dns_rrs_t *an) {
   return true;
 }
 
-static bool
+bool
 hsk_resource_to_empty(
   const char *name,
   const uint8_t *type_map,
@@ -1235,7 +1235,7 @@ ip_read(const uint8_t *data, uint8_t *ip) {
   return true;
 }
 
-static void
+void
 ip_to_b32(const uint8_t *ip, char *dst) {
   uint8_t mapped[16];
   const size_t family = sizeof(ip);
@@ -1260,7 +1260,7 @@ ip_to_b32(const uint8_t *ip, char *dst) {
   hsk_base32_encode_hex(data, size, dst, false);
 }
 
-static bool
+bool
 b32_to_ip(const char *str, uint8_t *ip, uint16_t *family) {
   size_t size = hsk_base32_decode_hex_size(str);
 
@@ -1293,7 +1293,7 @@ b32_to_ip(const char *str, uint8_t *ip, uint16_t *family) {
   return true;
 }
 
-static bool
+bool
 pointer_to_ip(const char *name, uint8_t *ip, uint16_t *family) {
   char label[HSK_DNS_MAX_LABEL + 1];
   size_t len = hsk_dns_label_get(name, 0, label);
