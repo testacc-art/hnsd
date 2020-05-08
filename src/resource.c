@@ -680,7 +680,7 @@ hsk_resource_to_glue(
       case HSK_GLUE4:
         if (!hsk_dns_is_subdomain(tld, c->name))
           continue;
-      case HSK_SYNTH4:
+      case HSK_SYNTH4: {
         hsk_dns_rr_t *rr = hsk_dns_rr_create(HSK_DNS_A);
 
         if (!rr)
@@ -695,10 +695,11 @@ hsk_resource_to_glue(
         hsk_dns_rrs_push(an, rr);
 
         break;
+      }
       case HSK_GLUE6:
         if (!hsk_dns_is_subdomain(tld, c->name))
           continue;
-      case HSK_SYNTH6:
+      case HSK_SYNTH6: {
         hsk_dns_rr_t *rr = hsk_dns_rr_create(HSK_DNS_AAAA);
 
         if (!rr)
@@ -713,6 +714,7 @@ hsk_resource_to_glue(
         hsk_dns_rrs_push(an, rr);
 
         break;
+      }
       default:
         continue;
     }
