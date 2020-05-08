@@ -19,6 +19,9 @@
 // Dummy record placeholder
 typedef struct hsk_record_s {
   uint8_t type;
+  char name[256];
+  uint8_t inet4[4];
+  uint8_t inet6[16];
 } hsk_record_t;
 
 // Resoruce serialization version 0 record types
