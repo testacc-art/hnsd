@@ -587,7 +587,7 @@ hsk_resource_to_txt(
     if (c->type != HSK_TEXT)
       continue;
 
-    hsk_text_record_t *rec = (hsk_text_record_t *)c;
+    hsk_txt_record_t *rec = (hsk_txt_record_t *)c;
 
     hsk_dns_rr_t *rr = hsk_dns_rr_create(HSK_DNS_TXT);
 
