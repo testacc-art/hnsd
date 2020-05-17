@@ -34,32 +34,15 @@ typedef struct hsk_ds_record_s {
   uint8_t digest[64];
 } hsk_ds_record_t;
 
-typedef struct hsk_ns_record_s {
-  uint8_t type;
-  char name[256];
-} hsk_ns_record_t;
+typedef hsk_record_t hsk_ns_record_t;
 
-typedef struct hsk_glue4_record_s {
-  uint8_t type;
-  char name[256];
-  uint8_t inet4[4];
-} hsk_glue4_record_t;
+typedef hsk_record_t hsk_glue4_record_t;
 
-typedef struct hsk_glue6_record_s {
-  uint8_t type;
-  char name[256];
-  uint8_t inet6[16];
-} hsk_glue6_record_t;
+typedef hsk_record_t hsk_glue6_record_t;
 
-typedef struct hsk_synth4_record_s {
-  uint8_t type;
-  uint8_t inet4[4];
-} hsk_synth4_record_t;
+typedef hsk_record_t hsk_synth4_record_t;
 
-typedef struct hsk_synth6_record_s {
-  uint8_t type;
-  uint8_t inet6[16];
-} hsk_synth6_record_t;
+typedef hsk_record_t hsk_synth6_record_t;
 
 typedef struct hsk_txt_record_s {
   uint8_t type;
