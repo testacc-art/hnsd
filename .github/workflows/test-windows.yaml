@@ -39,6 +39,6 @@ jobs:
 
       - name: Integration Tests
         working-directory: ./integration
-        run:  |
+        run: |
               npm install
               npm run test
