@@ -38,6 +38,7 @@ jobs:
           node-version: 16
 
       - name: Integration Tests
+        shell: pwsh
         working-directory: ./integration
         run: |
               npm install
